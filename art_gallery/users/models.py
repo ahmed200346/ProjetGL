@@ -15,6 +15,7 @@ class User(AbstractUser):
     email = models.EmailField(unique=True,validators=[Email_Valide])
     username= models.CharField(max_length=50, unique=True)
     USERNAME_FIELD="username"
+    is_artist = models.BooleanField(default=False, help_text="Indique si l'utilisateur est un artiste")
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
     class Meta:
