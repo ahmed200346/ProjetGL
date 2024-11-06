@@ -80,12 +80,31 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+<style>
+  .btn-logout {
+  font-size: 18px;
+  color: #fff; /* Couleur du texte */
+  background-color: #333; /* Couleur de fond */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 20px; /* Espacement à gauche du bouton */
+  transition: background-color 0.3s;
+}
 
+.btn-logout:hover {
+  background-color: #ff4d4d; /* Changer la couleur au survol */
+}
+</style>
       <div class="header-social-links">
         <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="btn-logout">Logout</a>
+      {% endif %}
       </div>
 
     </div>

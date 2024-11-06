@@ -5,5 +5,9 @@ from .views import *
 urlpatterns = [ 
     path('user/details/<int:pk>/', UserDetails.as_view(), name='user_details'),
     path('signup/', Register.as_view(), name='signup'),
-    path('login/', Login.as_view(), name='login'),
+    path('', Login.as_view(), name='login'),
+    path('home/', HomeView.as_view(), name='home'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'), 
+    path('update/<int:pk>/', UserUpdateView.as_view(), name='user_update'),
+    path('delete/<int:pk>/', DeleteUser.as_view(), name='delete_user'),  
 ]
