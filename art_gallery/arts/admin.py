@@ -1,5 +1,4 @@
 from django.contrib import admin
-from artistes.models import Artistes
 from .models import Art
 
 @admin.register(Art)
@@ -10,7 +9,7 @@ class ArtAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at',)  
     fieldsets = (
         (None, {
-            'fields': ('title', 'description', 'file', 'tags', 'owner')
+            'fields': ('title', 'description', 'file', 'tags', 'owner' , 'price')
         }),
         ('Date Information', {
             'fields': ('created_at', ),

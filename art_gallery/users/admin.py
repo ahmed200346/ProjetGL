@@ -22,7 +22,7 @@ class UserAdmin(BaseUserAdmin):
     # Organisation des champs dans le formulaire d'édition d'un utilisateur
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        ('Informations personnelles', {'fields': ('first_name', 'last_name', 'email')}),
+        ('Informations personnelles', {'fields': ('first_name', 'last_name', 'email' , 'is_artist')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Dates importantes', {'fields': ('last_login', 'date_joined')}),
     )

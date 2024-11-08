@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -56,6 +56,9 @@
         <ul>
             <li><a href="#" onclick="stayOnHome()" class="active">Home<br></a></li>
           <li><a href="about.html">About</a></li>
+          {% if user.is_authenticated and user.is_artist %}
+            <li><a href="{% url 'list_arts' %}">Votre Gallery</a></li>
+          {% endif %}
           <li class="dropdown"><a href="gallery.html"><span>Gallery</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="gallery.html">Nature</a></li>

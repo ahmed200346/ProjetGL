@@ -13,11 +13,10 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=30, validators=[only_Letters])
     last_name = models.CharField(max_length=30, validators=[only_Letters])
     email = models.EmailField(unique=True,validators=[Email_Valide])
-    username= models.CharField(max_length=50, unique=True)
+    username = models.CharField(max_length=50, unique=True)
     USERNAME_FIELD="username"
     is_artist = models.BooleanField(default=False, help_text="Indique si l'utilisateur est un artiste")
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
     class Meta:
         verbose_name = "User"
-        verbose_name_plural = "Users"
